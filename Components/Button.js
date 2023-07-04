@@ -1,6 +1,22 @@
-import { View,Text,TouchableOpacity,StyleSheet } from "react-native";
+import { View,Text,TouchableOpacity,StyleSheet} from "react-native";
 
-export default function Button({navigation,title,changeScreen}){
+export default function Button({navigation,title,changeScreen,handle}){
+
+  if(title=="SignUp" || title=="Login" || title=="ChangePassword" || title=="Search"){
+    return(
+      <View>
+      <TouchableOpacity style={ButtonStyle.outerV}
+                          onPress={()=>{
+                             handle();   // it is calling a function handle signup
+                          }}>
+   
+           <Text style={ButtonStyle.text}>{title}</Text>
+      </TouchableOpacity>
+      
+      </View>
+    )
+  }
+  else{
   return(
     <View>
     <TouchableOpacity style={ButtonStyle.outerV}
@@ -12,6 +28,7 @@ export default function Button({navigation,title,changeScreen}){
     </TouchableOpacity>
     </View>
   )
+  }
 }
 
 const ButtonStyle=StyleSheet.create({

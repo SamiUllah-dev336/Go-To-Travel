@@ -1,11 +1,11 @@
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/Entypo';
 
 import {Text,View} from "react-native";
 
 
 
 
-const Header=({head,navigation})=>{
+const HomeHeader=({head,navigation})=>{
   
     return(
     <View style={{
@@ -14,18 +14,19 @@ const Header=({head,navigation})=>{
                  width:300,
                  justifyContent:'space-between'
                  }}>
-    <View style={{flex:0.3}}>              
-    <Icon name={"angle-left"} size={30} 
+    <View style={{flex:0.25}}>              
+    <Icon name={"menu"} size={30} 
             style={{
                 fontWeight:'bold'
                 }}
             onPress={()=>{     
-                navigation.goBack();     //navigation.pop(); is also
+                navigation.openDrawer();   
               }}
     />
     </View>
 
-    <View style={{flex:0.7}}>
+    <View style={{flex:0.75}}>
+    
     <Text style={{
                 fontSize:23,
                 fontFamily:"Poppins-bold"
@@ -35,4 +36,4 @@ const Header=({head,navigation})=>{
    </View>
   )
 };
-export default Header;
+export default HomeHeader;

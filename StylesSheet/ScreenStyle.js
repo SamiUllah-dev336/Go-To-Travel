@@ -49,7 +49,6 @@ export const SignUpstyles = StyleSheet.create({
     logo:{
       height:hp('45%'),
       width:wp('45%'),
-      marginBottom:20,
       alignSelf:'center'
     },
    
@@ -115,15 +114,117 @@ export const SignUpstyles = StyleSheet.create({
     },
   })
 
-  // export const LogoStyle=StyleSheet.create({
-  //   container: {
-  //     padding:10,
-  //     flex: 1,
-  //     alignItems:'center',
-  //     backgroundColor:"#E0FFFF",
-  //   },
-  //   logo:{
-  //     height:500,
-  //     width:500
-  //   }
-  // })
+  export const BtmHomeStyle=StyleSheet.create({
+    container: {
+      padding:10,
+      flex: 1,
+      alignItems:'center',
+      backgroundColor:"#E0FFFF",
+    },
+    textStyle:{
+      textAlign:'center',
+      fontFamily:'Poppins-exbold',
+      fontSize:20
+    },
+    textHeader:{
+      fontSize:15,
+      fontFamily:"Poppins-exbold",
+      alignSelf:'flex-start',
+    },
+    calendar:{
+      flexDirection:"row",
+      borderBottomWidth:1,
+      justifyContent:'space-between',
+      height:40,
+      marginBottom:20,
+      backgroundColor:"white"
+    }
+    
+  })
+
+  export const HelpStyle=StyleSheet.create({
+    container: {
+      padding:10,
+      flex: 1,
+      justifyContent:'center',
+      backgroundColor:"#E0FFFF",
+    },
+    innerContainer:{
+      marginTop:40,
+      flex:0.7,
+      alignItems:"center"
+    },
+    textStyle:{
+      fontFamily:'Poppins-bold',
+      fontSize:20
+    },
+    comments:{
+      fontFamily:"Poppins-medium",
+      flex:0.2,
+      alignItems:'center',
+      justifyContent:'center',
+      width:250
+    }
+
+  })
+
+  export const TimeSlectionStyle=StyleSheet.create({
+    container: {
+      padding:10,
+      flex: 1,
+      alignItems:'center',
+      backgroundColor:"#E0FFFF",
+    },
+    outerFlat:{
+      marginTop:10,
+      flex:0.9
+    },
+    // flatlist
+    Main:{
+      flex:1,
+      width:300,
+      height:300,
+      borderRadius:20,
+      backgroundColor:'white',
+      marginBottom:10
+    },
+    Bottom:{
+      flex:0.4,
+      padding:10,
+      backgroundColor:'#fdf5e6'
+    }
+    
+  })
+
+  export const ReserveSeatStyle=StyleSheet.create({
+    container: {
+      padding:10,
+      flex: 1,
+      justifyContent:'center',
+      backgroundColor:"#E0FFFF",
+    }
+  })
+
+  export const ProfileStyle=StyleSheet.create({
+    container: {
+      padding:10,
+      flex: 1,
+      alignItems:'center',
+      backgroundColor:"#E0FFFF",
+    },
+    imageView:{
+      marginBottom:20,
+      marginTop:40,
+      flex:0.3,
+      height:200,
+      width:200,
+      borderWidth:1,
+      backgroundColor:'#f5fffa',
+      borderRadius:30
+    },
+    image:{ 
+      width: 200, 
+      height: 200,
+      borderRadius:30
+    }
+  })

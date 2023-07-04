@@ -1,33 +1,48 @@
 import { useState } from "react";
-import { Loginstylesheet,View,Text,Image,TextInput,TouchableOpacity } from "react-native";
-
+import { View,Text,Image,TouchableOpacity,ScrollView ,Alert} from "react-native";
 // components
 import { TextField } from "../Components/TextField";
 import Button from "../Components/Button";
-
 // styles
 import { Loginstyles } from "../StylesSheet/ScreenStyle";
+// for firebase
+import {signInWithEmailAndPassword} from "firebase/auth";
+import {auth} from "../firebase";
+import { PasswordField } from "../Components/PasswordField";
 
-import Icon from "react-native-vector-icons/MaterialCommunityIcons";
-import {
-  responsiveHeight as rh,
-  responsiveWidth as rw,
-  responsiveFontSize as rs
-} from "react-native-responsive-dimensions";
 
 
 export default function LoginScreen({navigation}){
-    const [Email,setEmail]=useState('')
-    const [Password,setPassword]=useState('')
+    const [Email,setEmail]=useState('');
+    const [Password,setPassword]=useState('');
+    
 
-    const handleLogin=()=>{
-     console.log("handle login")
-    }
+    const handleLogin = async () => {
+      console.log('Handle Sign In')
+     await signInWithEmailAndPassword(auth, Email, Password)
+       .then((userCredential) => {
+         // Signed in
+         console.log(Email);
+         console.log(Password);
+         const user = userCredential.user;
+         console.log("user data,", user);
+         global.user=Email;
+         
+         navigation.navigate("HomeDrawer");
+       })
+       .catch((error) => {
+         const errorCode = error.code;
+         const errorMessage = error.message;
+         let start="(";
+         Alert.alert(start.concat(errorMessage.slice(22)));
+
+       });
+   };
 
     return(
         <View style={Loginstyles.container}>
-        
-          <View style={{ flex:0.4}}>
+          <ScrollView showsVerticalScrollIndicator={false}>
+          <View style={{ flex:0.3}}>
             <Image
             style={Loginstyles.logo}
             source={require('../assets/Logo.png')}
@@ -36,26 +51,25 @@ export default function LoginScreen({navigation}){
 
           <View style={{flex:0.05,alignItems:"center"}}>
               <Text style={{fontFamily:'Poppins-bold',
-                            fontSize:rs(2)
+                            fontSize:20
                             }}>
               Login
               </Text>
           </View>
         
           <View style={Loginstyles.EM_PS_login}>
-          {/* <Icon name="email" size={30} style={Loginstyles.icon}/>  */}
+          
                 <TextField
                 label={"Email"}
                 value={Email}
                 onChangeText={(Email)=>setEmail(Email)}
                 />
 
-          {/* <Icon name="form-textbox-password" size={30} style={Loginstyles.icon}/>  */}
-                <TextField
+          
+                <PasswordField
                 label={"Password"}
                 value={Password}
                 onChangeText={(Password)=>setPassword(Password)}
-                isPassword={true}
                 />
 
               <TouchableOpacity style={Loginstyles.forgot} 
@@ -66,7 +80,7 @@ export default function LoginScreen({navigation}){
                   </Text>
               </TouchableOpacity>
 
-              <Button navigation={navigation} title="Login" changeScreen={"Home"}/>
+              <Button title="Login" changeScreen={"HomeDrawer"} handle={handleLogin}/>
 
           </View>
 
@@ -80,7 +94,8 @@ export default function LoginScreen({navigation}){
               <Text style={{fontFamily:'Poppins-bold'}}>Sign Up</Text>
           </TouchableOpacity>
           </View>     
-     </View>
+          </ScrollView>
+        </View>
      
     )
 }

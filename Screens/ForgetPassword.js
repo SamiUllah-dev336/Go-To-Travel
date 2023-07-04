@@ -1,19 +1,43 @@
 import {View,Text, TouchableOpacity,KeyboardAvoidingView} from "react-native";
 import { useState } from "react";
 import { ForgetStyle } from "../StylesSheet/ScreenStyle"
+import Icon from "react-native-vector-icons/Entypo";
 
 //Components
 import { TextField } from "../Components/TextField";
 import Button from "../Components/Button";
 import Header from "../Components/Header";
+import { ScrollView } from "react-native-gesture-handler";
+import {sendPasswordResetEmail} from "firebase/auth";
+import {auth} from "../firebase";
+import { Alert } from "react-native";
 
 export default function ForgetPasswordScreen({navigation}){
-    const [Email,setEmail]=useState('')
+    const [Email,setEmail]=useState('');
+
+    const reset=async()=>{
+        if(!Email){
+          Alert.alert("Please enter email");
+          return;
+        }
+
+        await sendPasswordResetEmail(auth,Email)
+        .then(() => {
+          Alert.alert("Password reset email is sent!After that Login new Password");
+
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          // ..
+        });
+
+    }
+
       return(
         <View style={ForgetStyle.container}>
-             <KeyboardAvoidingView
-      behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-                    <View style={{  flex:0.1}}>
+            <ScrollView>
+            <View style={{flex:0.1}}>
                 <Header head="ForgetPassword"  navigation={navigation} />
             </View>
       
@@ -27,19 +51,29 @@ export default function ForgetPasswordScreen({navigation}){
                 onChangeText={(Email)=>setEmail(Email)}
                 />
                 </View>
-            
-                <Button navigation={navigation} title={"Send Code"} changeScreen={"Verification"}/>
+    
+               <Button title={"ChangePassword"} handle={reset}/>
             </View>
+            
+            <View style={{flex:0.6}}> 
+              <View style={{flexDirection:'row',marginTop:40}}>
+                  <Text style={{fontFamily:"Poppins-regular",marginLeft:30}}>Don't receive an email yet?</Text>
+                  <TouchableOpacity onPress={reset}>
+                      <Text style={{fontFamily:'Poppins-exbold'}}>Resend</Text>
+                  </TouchableOpacity>
+              </View>
 
-            <View style={{flex:0.6,flexDirection:'row'}}>
-                <Text style={{fontFamily:"Poppins-regular"}}>Don't receive an email yet?</Text>
-                <TouchableOpacity>
-                    <Text style={{fontFamily:'Poppins-exbold'}}>Resend</Text>
+              <View style={{flexDirection:'row'}}>
+                <Text style={{fontFamily:"Poppins-regular",marginLeft:50}}>Password has entered?</Text>
+                <TouchableOpacity onPress={()=>{if(Email){
+                                               navigation.navigate("Login")}}}>
+                    <Text style={{fontFamily:'Poppins-exbold'}}>Login</Text>
                 </TouchableOpacity>
             </View>
-  
-            </KeyboardAvoidingView>
+            </View>
 
+
+            </ScrollView>
         </View>
     
 

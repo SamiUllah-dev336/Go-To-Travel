@@ -1,6 +1,6 @@
 import {TextInput,View } from "react-native";
 
-const TextField=({label,isPassword,value,onChangeText,keybtype})=>{
+const TextField=({label,isPassword,value,onChangeText,keybtype,press})=>{
      return(
      <View style={{   
                 justifyContent:"center",
@@ -24,6 +24,8 @@ const TextField=({label,isPassword,value,onChangeText,keybtype})=>{
      onChangeText={onChangeText}
      keyboardType={keybtype}    
      secureTextEntry={isPassword ? true:false}
+     cursorColor={"#000000"}
+     onPress={press}
      />
      </View>
      );
