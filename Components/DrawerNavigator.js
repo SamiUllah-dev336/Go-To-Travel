@@ -1,12 +1,9 @@
 import { createDrawerNavigator } from "@react-navigation/drawer"
-
 const Drawer=createDrawerNavigator();
-
 // screens
 import ProfileScreen from "../DrawerScreens/Profile";
 import TicketChangeScreen from "../DrawerScreens/TicketChange";
 import HomeScreen from "../DrawerScreens/Home";
-
 import CustomDrawer from "./CustomDrawer";
 
 export const DrawerNavigator=()=>{

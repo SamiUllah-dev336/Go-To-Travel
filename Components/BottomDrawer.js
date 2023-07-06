@@ -1,14 +1,7 @@
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/Entypo";
 
-
-
-
-
 const Bottom=createBottomTabNavigator();
-
-  
-
 // screens
 import LocationScreen from "../BottomNavigatorScreens/Location";
 import HelpScreen from "../BottomNavigatorScreens/Help";
@@ -29,7 +22,7 @@ export const BottomNavigator=()=>{
                          <Icon name="home" size={25} />  
                           );
                                   }
-             }}        
+               }}        
      /> 
 
     <Bottom.Screen 

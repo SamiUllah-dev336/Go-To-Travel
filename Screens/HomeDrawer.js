@@ -1,7 +1,6 @@
 import {View} from "react-native";
 import { DrawerNavigator } from "../Components/DrawerNavigator";
 
-
 export default function HomeDrawerScreen(){
 
     return(

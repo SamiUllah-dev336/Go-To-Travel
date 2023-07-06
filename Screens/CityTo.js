@@ -2,7 +2,6 @@ import {View,Text} from "react-native";
 import { BtmHomeStyle } from "../StylesSheet/ScreenStyle";
 import CityFlatlist from "../Components/CityFlatlist";
 
-
 export default function CityToScreen({navigation}){
     
     return(
@@ -15,7 +14,6 @@ export default function CityToScreen({navigation}){
          <View style={{flex:0.9}}>
          <CityFlatlist navigation={navigation} press="CityTo"/>
          </View>
-
 
       </View>
 

@@ -1,4 +1,4 @@
-import {View,Text,Button,Image,TouchableOpacity} from "react-native";
+import {View,Text,Image,TouchableOpacity} from "react-native";
 import * as ImagePicker from 'expo-image-picker';
 import { useState,useEffect } from "react";
 import { BtmHomeStyle, ProfileStyle } from "../StylesSheet/ScreenStyle";
@@ -13,7 +13,7 @@ import {
     updateDoc,
     where,
     doc
-  } from "firebase/firestore";
+} from "firebase/firestore";
 
 
 export default function ProfileScreen(){

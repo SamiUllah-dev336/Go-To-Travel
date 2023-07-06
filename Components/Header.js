@@ -1,9 +1,5 @@
 import Icon from 'react-native-vector-icons/FontAwesome';
-
 import {Text,View} from "react-native";
-
-
-
 
 const Header=({head,navigation})=>{
   

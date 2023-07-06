@@ -1,9 +1,5 @@
 import Icon from 'react-native-vector-icons/Entypo';
-
 import {Text,View} from "react-native";
-
-
-
 
 const HomeHeader=({head,navigation})=>{
   

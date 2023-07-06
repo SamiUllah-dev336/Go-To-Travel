@@ -1,7 +1,6 @@
 import { fetchCities } from "../Components/FetchCities";
-import React from "react";
+import React,{ useState } from "react";
 import { View,Text,FlatList,TouchableOpacity } from "react-native";
-import { useState } from "react";
 import { GlobalContext } from "../StateManagement/GlobalProvider";
 
 export default function CityFlatlist({navigation,press}){

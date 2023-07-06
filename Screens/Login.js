@@ -16,14 +16,10 @@ export default function LoginScreen({navigation}){
     const [Email,setEmail]=useState('');
     const [Password,setPassword]=useState('');
     
-
     const handleLogin = async () => {
-      console.log('Handle Sign In')
      await signInWithEmailAndPassword(auth, Email, Password)
        .then((userCredential) => {
          // Signed in
-         console.log(Email);
-         console.log(Password);
          const user = userCredential.user;
          console.log("user data,", user);
          global.user=Email;

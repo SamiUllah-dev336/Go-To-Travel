@@ -1,6 +1,5 @@
 import {db} from "../firebase";
 import { ref } from "firebase/database";
-
 import {
     collection,
     onSnapshot,

@@ -21,10 +21,7 @@ export default function SignUpScreen({navigation}){
   const [Email,setEmail]=useState('');
   const [Password,setPassword]=useState('');
   const [ConfirmPassword,setConfirmPassword]=useState('');
-       
-      //  global.deep=Linking.createURL("myapp://Login");
-       
-      
+
        // for phone number
         const handleTextChange = (newText) => {
           // Remove any non-numeric characters from the input 
@@ -168,15 +165,6 @@ export default function SignUpScreen({navigation}){
 }
 
 
-{/* <View style={SignUpstyles.checkbOuter}>
-      <CheckBox
-        isChecked={isSelected}
-        onClick={()=>setisSelected(!isSelected)}
-        style={SignUpstyles.checkbx}
-      />
-        <Text>I accept the term of use and privacy policy</Text>
-      </View> */}
-        { /*sign up buuton =>onPress={handleSignup}   style={[SignUpstyles.button,{backgroundColor:disab()?"#000000":"grey"}]} 
-                        disabled={disab()}*/}
+
 
 

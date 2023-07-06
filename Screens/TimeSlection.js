@@ -1,6 +1,6 @@
-import {View,Text,FlatList,Image,TouchableOpacity} from "react-native";
+import {View,Text,FlatList,Image} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
-import React from "react";
+import React,{ useEffect } from "react";
 import { GlobalContext } from "../StateManagement/GlobalProvider";
 import { TimeSlectionStyle } from "../StylesSheet/ScreenStyle";
 import Header from "../Components/Header";
@@ -13,11 +13,8 @@ import {
     onSnapshot,
     query,
     updateDoc,
-    where,
     doc
   } from "firebase/firestore";
-import { useEffect } from "react";
-
 
 
 export default function TimeSelectionScreen({navigation}){

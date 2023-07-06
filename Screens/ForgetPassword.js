@@ -1,7 +1,6 @@
-import {View,Text, TouchableOpacity,KeyboardAvoidingView} from "react-native";
+import {View,Text, TouchableOpacity,Alert} from "react-native";
 import { useState } from "react";
 import { ForgetStyle } from "../StylesSheet/ScreenStyle"
-import Icon from "react-native-vector-icons/Entypo";
 
 //Components
 import { TextField } from "../Components/TextField";
@@ -10,7 +9,6 @@ import Header from "../Components/Header";
 import { ScrollView } from "react-native-gesture-handler";
 import {sendPasswordResetEmail} from "firebase/auth";
 import {auth} from "../firebase";
-import { Alert } from "react-native";
 
 export default function ForgetPasswordScreen({navigation}){
     const [Email,setEmail]=useState('');

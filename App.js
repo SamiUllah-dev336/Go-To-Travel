@@ -6,14 +6,12 @@ import { useFonts } from 'expo-font';
 import LoginScreen from './Screens/Login';
 import SignUpScreen from './Screens/SignUp';
 import ForgetPasswordScreen from './Screens/ForgetPassword';
-//import VerificationScreen from './Screens/Verification';
-//import NewPasswordScreen from './Screens/NewPassword';
-//import ModalViewScreen from './Screens/ModalV';
 import HomeDrawerScreen from './Screens/HomeDrawer';
 import CityToScreen from './Screens/CityTo';
 import CityFromScreen from './Screens/CityFrom';
 import TimeSelectionScreen from './Screens/TimeSlection';
 import ReserveSeatScreen from './Screens/ReserveSeat';
+import PaymentScreen from './Screens/Payment';
 
 import { GlobalProvider } from './StateManagement/GlobalProvider';
 
@@ -39,16 +37,13 @@ export default function App() {
         <Stack.Screen name="Login" component={LoginScreen}/>
         <Stack.Screen name="SignUp" component={SignUpScreen}/>
         <Stack.Screen name="ForgetPassword" component={ForgetPasswordScreen}/>
-        {/* <Stack.Screen name="Verification" component={VerificationScreen}/>
-        <Stack.Screen name="NewPassword" component={NewPasswordScreen}/> */}
-        {/* <Stack.Screen name="ModalV" component={ModalViewScreen}/> */}
         <Stack.Screen name="HomeDrawer" component={HomeDrawerScreen}/>
         <Stack.Screen name="CityTo" component={CityToScreen}/>
         <Stack.Screen name="CityFrom" component={CityFromScreen}/>
-        <Stack.Screen name="TimeSlection" component={TimeSelectionScreen}/>
+        <Stack.Screen name="TimeSlection" component={TimeSelectionScreen}/> 
         <Stack.Screen name="ReserveSeat" component={ReserveSeatScreen}/>
+        <Stack.Screen name="Payment" component={PaymentScreen}/>
 
-       
       </Stack.Navigator>              
     </NavigationContainer>
     </GlobalProvider>

@@ -2,7 +2,7 @@ import { useState } from "react";
 import {TextInput,View ,TouchableOpacity} from "react-native";
 import Icon from "react-native-vector-icons/AntDesign";
 
-const PasswordField=({label,isPassword,value,onChangeText})=>{
+const PasswordField=({label,value,onChangeText})=>{
     const [Password,setPassword]=useState(true);
      return(
      <View style={{   
