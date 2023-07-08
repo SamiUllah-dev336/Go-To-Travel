@@ -70,7 +70,6 @@ export default function BottomHomeScreen({navigation}){
     return(
       <View style={BtmHomeStyle.container}>
         <ScrollView>
-          {/* {console.log(fetchCities("cities"))} */}
         <View style={{flex:0.1}}>
           <HomeHeader head={"Go-To Travel"} navigation={navigation}/>
         </View>
@@ -96,9 +95,9 @@ export default function BottomHomeScreen({navigation}){
             </View>      
 
             <Text style={BtmHomeStyle.textHeader}>From</Text> 
-            <SearchCityField label={globalState.city} navigation={navigation} press={"CityTo"}/>
+            <SearchCityField label={globalState.city} navigation={navigation} press={"CityFrom"}/>
             <Text style={BtmHomeStyle.textHeader}>To</Text> 
-            <SearchCityField label={globalState1.city1} navigation={navigation} press={"CityFrom"}/>
+            <SearchCityField label={globalState1.city1} navigation={navigation} press={"CityTo"}/>
             
 
             <Text style={BtmHomeStyle.textHeader}>Departure Date</Text> 

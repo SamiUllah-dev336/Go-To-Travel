@@ -10,12 +10,9 @@ export default function LocationScreen(){
   const [location, setLocation] = useState(null); 
   const [locationName, setLocationName] = useState(''); 
 
-    const regionchange=(region)=>{
-      //console.log(region)
-    }
+  
 
     // hook
-
     useEffect(() => {
       // Request location permissions and get the current location
       (async () => {
@@ -27,22 +24,6 @@ export default function LocationScreen(){
   
         let location= await Location.getCurrentPositionAsync({});
         setLocation(location.coords);
-        
-        // // Reverse geocode the current location
-        // let addressResponse = await Location.reverseGeocodeAsync(location.coords);
-        // if (addressResponse.length > 0) {
-        //   // Extract the relevant address components
-        //   let address = addressResponse[0];
-        //   let { name, street, city, region, country } = address;
-
-        //   // Create the location name or title based on the available address components
-        //   let locationTitle = [name, street, city, region, country]
-        //     .filter(component => component)
-        //     .join(', ');
-
-        //   setLocationName(locationTitle);
-        // }
-
         
         })();
 
