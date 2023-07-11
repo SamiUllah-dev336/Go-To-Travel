@@ -21,7 +21,6 @@ export default function LoginScreen({navigation}){
        .then((userCredential) => {
          // Signed in
          const user = userCredential.user;
-         console.log("user data,", user);
          global.user=Email;
          
          navigation.navigate("HomeDrawer");
