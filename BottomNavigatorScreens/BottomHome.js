@@ -40,7 +40,7 @@ export default function BottomHomeScreen({navigation}){
         Alert.alert("Please select Destination");
         return;
       }
-        navigation.navigate("TimeSlection");
+      navigation.navigate("TimeSlection");
     }
    
     const FadeInView = props => {

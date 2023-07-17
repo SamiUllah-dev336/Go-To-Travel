@@ -1,7 +1,5 @@
 import {View,Text} from "react-native";
 import { useState,useEffect } from "react";
-import { BtmHomeStyle } from "../StylesSheet/ScreenStyle";
-
 import MapView,{Marker} from "react-native-maps";
 import * as Location from 'expo-location';
 
@@ -9,8 +7,6 @@ import * as Location from 'expo-location';
 export default function LocationScreen(){
   const [location, setLocation] = useState(null); 
   const [locationName, setLocationName] = useState(''); 
-
-  
 
     // hook
     useEffect(() => {
@@ -23,15 +19,15 @@ export default function LocationScreen(){
         }
   
         let location= await Location.getCurrentPositionAsync({});
-        setLocation(location.coords);
-        
+        setLocation(location.coords);       
         })();
 
     }, [location,locationName]);
 
     return(
            <View style={{flex:1,backgroundColor: "#E0FFFF"}}>
-           {location&&( <MapView  onRegionChange={regionchange} 
+            
+           {location&&( <MapView
                       style={{ flex: 1 }}
                       initialRegion={{
                       latitude: location.latitude,

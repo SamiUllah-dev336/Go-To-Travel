@@ -6,7 +6,6 @@ const HomeHeader=({head,navigation})=>{
     return(
     <View style={{
                  flexDirection:'row',
-                 marginTop:30,
                  width:300,
                  justifyContent:'space-between'
                  }}>

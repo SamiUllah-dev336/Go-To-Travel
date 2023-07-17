@@ -5,7 +5,6 @@ import { BtmHomeStyle, ProfileStyle } from "../StylesSheet/ScreenStyle";
 import CustomText from "../Components/CustomText";
 // database...
 import { db } from "../firebase";
-import { ref } from "firebase/database";
 import {
   collection,
   onSnapshot,
@@ -13,8 +12,7 @@ import {
   updateDoc,
   where,
   doc,
-  getDocs,
-  getDoc
+  getDocs
 } from "firebase/firestore";
 
 export default function ProfileScreen() {
@@ -67,7 +65,6 @@ export default function ProfileScreen() {
       try {
         const q = query(collection(db, 'user'), where('email', '==', global.user));
         const snapshot = await getDocs(q);
-        console.log('id outer loop',snapshot.docs.at(0).id);
         
         const documentRef = doc(db, 'user',snapshot.docs.at(0).id);
         await updateDoc(documentRef, {

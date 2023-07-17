@@ -7,7 +7,7 @@ export default function MyTicketScreen(){
 
     return(
         <View style={BtmHomeStyle.container}>
-            <Text style={{marginTop:30}}>My Ticket Screen</Text>
+            <Text>My Ticket Screen</Text>
         </View>
     )
 }

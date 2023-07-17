@@ -150,7 +150,6 @@ export const SignUpstyles = StyleSheet.create({
       backgroundColor:"#E0FFFF",
     },
     innerContainer:{
-      marginTop:40,
       flex:0.7,
       alignItems:"center"
     },
@@ -214,7 +213,6 @@ export const SignUpstyles = StyleSheet.create({
     },
     imageView:{
       marginBottom:20,
-      marginTop:40,
       flex:0.3,
       height:200,
       width:200,

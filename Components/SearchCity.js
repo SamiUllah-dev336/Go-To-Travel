@@ -26,7 +26,7 @@ const SearchCityField=({label,navigation,press})=>{
                  
                  
                  >
-     <Text style={{marginLeft:10}} onPress={()=>{ if(globalState.city=="Enter city" && press=="CityFrom"){
+     <Text style={{marginLeft:10}} onPress={()=>{ if(globalState.city=="Enter city" && press=="CityTo"){
                                                    Alert.alert("Select origin first");
                                                    return;
                                                   }

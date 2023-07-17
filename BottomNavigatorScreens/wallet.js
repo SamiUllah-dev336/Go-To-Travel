@@ -9,7 +9,7 @@ export default function WalletScreen(){
    
     return(
         <View style={BtmHomeStyle.container}>
-            <View style={{marginBottom:10,marginTop:40}}>
+            <View style={{marginBottom:10}}>
                 <Text style={BtmHomeStyle.textStyle}>
                 Your wallet balance
                 </Text>

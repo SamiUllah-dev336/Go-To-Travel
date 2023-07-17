@@ -6,7 +6,6 @@
     "orientation": "portrait",
     "icon": "./assets/Logo.png",
     "userInterfaceStyle": "light",
-  
     "splash": {
       "image": "./assets/Logo.png",
       "resizeMode": "contain",
@@ -22,10 +21,16 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/Logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.sami_336.tranport"
     },
     "web": {
       "favicon": "./assets/Logo.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8935bc8b-1d23-4735-b427-d2b1c78ceb86"
+      }
     }
   }
 }

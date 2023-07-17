@@ -1,30 +1,16 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState} from 'react';
 import { Modal, Text, Pressable, View} from 'react-native';
 import { styles } from '../StylesSheet/ScreenStyle';
 
 const PaymentScreen= ({navigation}) => {
- // const [modalVisible, setModalVisible] = useState(true);
-  const [name,setname]=useState('');
-  console.log('start of function..')
+  const [modalVisible, setModalVisible] = useState(true);
 
-  // useEffect(()=>{
-  //  console.log('I am useEffect with empty array');
-  // },[])
-
-  // useEffect(()=>{
-  //     console.log('I am useEffect without braces..');
-  // })
-
-  useEffect(()=>{
-      console.log('I am useEffect with name');
-      setname('gujjar')
-  },[name])
 
   return (
     
     <View style={styles.centeredView}>
        {console.log("I am return function")}
-      {/* <Modal
+      <Modal
         animationType="fade"
         transparent={true}
         visible={modalVisible}
@@ -42,7 +28,7 @@ const PaymentScreen= ({navigation}) => {
             </Pressable>
           </View>
         </View>
-      </Modal> */}
+      </Modal>
     
     </View>
     

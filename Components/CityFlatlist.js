@@ -22,7 +22,7 @@ export default function CityFlatlist({navigation,press}){
                             flexDirection:'row'
                             }}>
                 <TouchableOpacity style={{flex:0.3}} onPress={() => {
-                                                                if(press=="CityTo"){
+                                                                if(press=="CityFrom"){
                                                                 setGlobalState((prevState) => ({ ...prevState, city: item.city}));
                                                                 }else{
                                                                 setGlobalState1((prevState) => ({ ...prevState, city1: item.city}));
